@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 출석 관리 시스템</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>출석 관리 시스템</h1>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" data-status="전체">전체</button>
+            <button class="filter-btn" data-status="출석">출석</button>
+            <button class="filter-btn" data-status="지각">지각</button>
+            <button class="filter-btn" data-status="결석">결석</button>
+        </div>
+
+        <div id="student-list" class="student-grid">
+            </div>
+    </div>
+
+    <script src="server-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+:root {
+  --primary: #4a90e2;
+  --present: #2ecc71; /* 출석: 초록 */
+  --late: #f1c40f;    /* 지각: 노랑 */
+  --absent: #e74c3c;  /* 결석: 빨강 */
+  --bg: #f5f7fa;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Pretendard', sans-serif;
+  background-color: var(--bg);
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin: 20px;
+}
+
+/*필터 버튼*/
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 70px;
+}
+
+.filter-btn {
+  height: 40px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+}
+
+.filter-btn.active{
+  color: white;
+  font-weight: 800;
+}
+.filter-btn:hover{
+  color: white;
+}
+.filter-btn:nth-child(1).active {
+  background: var(--primary);
+}
+.filter-btn:nth-child(1):hover{
+  background: var(--primary);
+}
+.filter-btn:nth-child(2).active{
+  background: var(--present);
+}
+.filter-btn:nth-child(2):hover{
+  background: var(--present);
+}
+.filter-btn:nth-child(3).active{
+  background: var(--late);
+}
+.filter-btn:nth-child(3):hover{
+  background: var(--late);
+}
+.filter-btn:nth-child(4).active{
+  background: var(--absent);
+}
+.filter-btn:nth-child(4):hover{
+  background: var(--absent);
+}
+
+/* 카드 그리드 레이아웃 */
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* 개별 학생 카드 */
+.student-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  text-align: center;
+  border-top: 5px solid #ddd;
+}
+
+.student-card.status-출석 { border-top-color: var(--present); }
+.student-card.status-지각 { border-top-color: var(--late); }
+.student-card.status-결석 { border-top-color: var(--absent); }
+
+.student-id { color: #888; font-size: 0.8rem; margin-bottom: 5px; }
+.student-name { font-size: 1.2rem; font-weight: bold; margin: 5px 0; }
+.student-class { color: #666; font-size: 0.9rem; }
+
+.status-badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.status-출석 .status-badge { background: #eafaf1; color: var(--present); }
+.status-지각 .status-badge { background: #fef9e7; color: var(--late); }
+.status-결석 .status-badge { background: #fdedec; color: var(--absent); }
